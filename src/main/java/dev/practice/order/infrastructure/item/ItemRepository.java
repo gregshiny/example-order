@@ -1,7 +1,7 @@
 package dev.practice.order.infrastructure.item;
 
 
-import dev.practice.order.domain.order.Item;
+import dev.practice.order.domain.item.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

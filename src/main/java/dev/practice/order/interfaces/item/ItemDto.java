@@ -1,6 +1,6 @@
 package dev.practice.order.interfaces.item;
 
-import dev.practice.order.domain.order.Item;
+import dev.practice.order.domain.item.Item;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

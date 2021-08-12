@@ -1,9 +1,9 @@
 package dev.practice.order.application.item;
 
 import dev.practice.order.domain.notification.NotificationService;
-import dev.practice.order.domain.order.ItemCommand;
-import dev.practice.order.domain.order.ItemInfo;
-import dev.practice.order.domain.order.ItemService;
+import dev.practice.order.domain.item.ItemCommand;
+import dev.practice.order.domain.item.ItemInfo;
+import dev.practice.order.domain.item.ItemService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

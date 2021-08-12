@@ -1,4 +1,4 @@
-package dev.practice.order.domain.order;
+package dev.practice.order.domain.item;
 
 public interface ItemService {
     String registerItem(ItemCommand.RegisterItemRequest request, String partnerToken);

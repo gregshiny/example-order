@@ -1,4 +1,4 @@
-package dev.practice.order.domain.order.optiongroup;
+package dev.practice.order.domain.item.optiongroup;
 
 public interface ItemOptionGroupStore {
     ItemOptionGroup store(ItemOptionGroup itemOptionGroup);
