@@ -1,4 +1,4 @@
-package dev.practice.order.domain.order;
+package dev.practice.order.domain.item;
 
 import lombok.Builder;
 import lombok.Getter;
