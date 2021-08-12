@@ -1,10 +1,10 @@
-package dev.practice.order.domain.order.optiongroup;
+package dev.practice.order.domain.item.optiongroup;
 
 import com.google.common.collect.Lists;
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;
-import dev.practice.order.domain.order.Item;
-import dev.practice.order.domain.order.option.ItemOption;
+import dev.practice.order.domain.item.Item;
+import dev.practice.order.domain.item.option.ItemOption;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
