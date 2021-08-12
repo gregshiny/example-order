@@ -1,7 +1,7 @@
-package dev.practice.order.domain.order;
+package dev.practice.order.domain.item;
 
 
-import dev.practice.order.domain.order.optiongroup.ItemOptionGroup;
+import dev.practice.order.domain.item.optiongroup.ItemOptionGroup;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package dev.practice.order.interfaces.item;
 
-import dev.practice.order.domain.order.ItemCommand;
-import dev.practice.order.domain.order.ItemInfo;
+import dev.practice.order.domain.item.ItemCommand;
+import dev.practice.order.domain.item.ItemInfo;
 import org.mapstruct.*;
 
 @Mapper(
