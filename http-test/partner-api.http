@@ -1,0 +1,9 @@
+### 파트너 등록
+POST http://localhost:8080/api/v1/partners
+Content-Type: application/json
+
+{
+  "partnerName": "테스트",
+  "businessNo": "1234123456",
+  "email": "greg.shiny82@gmail.com"
+}
