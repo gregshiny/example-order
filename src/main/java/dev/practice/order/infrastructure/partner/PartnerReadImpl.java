@@ -14,6 +14,12 @@ public class PartnerReadImpl implements PartnerReader {
     private final PartnerRepository partnerRepository;
 
     @Override
+    public Partner getPartner(Long partnerId) {
+        return partnerRepository.findById(partnerId)
+                .orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
     public Partner getPartner(String partnerToken) {
         return partnerRepository.findByPartnerToken(partnerToken)
                 .orElseThrow(EntityNotFoundException::new);
