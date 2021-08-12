@@ -1,0 +1,90 @@
+### 주문 요청 초기 저장
+POST http://localhost:8080/api/v1/orders/init
+Content-Type: application/json
+
+{
+  "userId": "12345",
+  "payMethod": "NAVER_PAY",
+  "receiverName": "이희창",
+  "receiverPhone": "01000001234",
+  "receiverZipcode": "12345",
+  "receiverAddress1": "서울시 강동구",
+  "receiverAddress2": "우리집",
+  "etcMessage": "감사합니다",
+  "orderItemList": [
+    {
+      "orderCount": 2,
+      "itemToken": "itm_XqbL4h1l5mz1mnMZ",
+      "itemName": "티셔츠",
+      "itemPrice": "30000",
+      "orderItemOptionGroupList": [
+        {
+          "ordering": 1,
+          "itemOptionGroupName": "사이즈",
+          "orderItemOptionList": [
+            {
+              "ordering": 1,
+              "itemOptionName": "MEDIUM",
+              "itemOptionPrice": 0
+            }
+          ]
+        },
+        {
+          "ordering": 2,
+          "itemOptionGroupName": "컬러",
+          "orderItemOptionList": [
+            {
+              "ordering": 1,
+              "itemOptionName": "GOLD",
+              "itemOptionPrice": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "orderCount": 1,
+      "itemToken": "itm_qCPGVzwvLVmCoZs6",
+      "itemName": "양말",
+      "itemPrice": "10000",
+      "orderItemOptionGroupList": [
+        {
+          "ordering": 1,
+          "itemOptionGroupName": "사이즈",
+          "orderItemOptionList": [
+            {
+              "ordering": 1,
+              "itemOptionName": "LARGE",
+              "itemOptionPrice": 0
+            }
+          ]
+        },
+        {
+          "ordering": 2,
+          "itemOptionGroupName": "컬러",
+          "orderItemOptionList": [
+            {
+              "ordering": 1,
+              "itemOptionName": "RED",
+              "itemOptionPrice": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+### 주문 결제 처리
+POST http://localhost:8080/api/v1/orders/payment-order
+Content-Type: application/json
+
+{
+  "orderToken": "ord_lqAcdTqvORlU7ry3",
+  "payMethod": "NAVER_PAY",
+  "amount": "72000",
+  "orderDescription": "주문테스트"
+}
+
+### 주문 조회
+GET http://localhost:8080/api/v1/orders/ord_lqAcdTqvORlU7ry3
