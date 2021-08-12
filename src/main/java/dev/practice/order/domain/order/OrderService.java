@@ -7,4 +7,5 @@ public interface OrderService {
 
     OrderInfo.Main retrieveOrder(String orderToken);
 
+    void updateReceiverInfo(String orderToken, OrderCommand.UpdateReceiverInfoRequest request);
 }

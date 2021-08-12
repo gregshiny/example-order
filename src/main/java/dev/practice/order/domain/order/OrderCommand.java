@@ -112,4 +112,16 @@ public class OrderCommand {
         private final Long amount;
         private final PayMethod payMethod;
     }
+
+    @Getter
+    @Builder
+    @ToString
+    public static class UpdateReceiverInfoRequest {
+        private final String receiverName;
+        private final String receiverPhone;
+        private final String receiverZipcode;
+        private final String receiverAddress1;
+        private final String receiverAddress2;
+        private final String etcMessage;
+    }
 }
