@@ -29,3 +29,9 @@ spring:
 
 logging:
   config: classpath:logback-local.xml
+
+# aws 의 access-key, secret-key 를 반영해야 정상 동작함
+cloud:
+  aws:
+    access-key: access-key
+    secret-key: secret-key

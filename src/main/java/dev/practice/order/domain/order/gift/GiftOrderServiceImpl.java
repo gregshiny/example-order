@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class GiftOrderServiceImpl implements GiftOrderService {
     private final OrderReader orderReader;
     private final PaymentProcessor paymentProcessor;
-//    private final GiftMessageChannelSender giftMessageChannelSender;
+    private final GiftMessageChannelSender giftMessageChannelSender;
 
     @Override
     @Transactional
@@ -30,6 +30,6 @@ public class GiftOrderServiceImpl implements GiftOrderService {
         paymentProcessor.pay(order, paymentRequest);
         order.orderComplete();
 
-//        giftMessageChannelSender.paymentComplete(new GiftPaymentCompleteMessage(order.getOrderToken()));
+        giftMessageChannelSender.paymentComplete(new GiftPaymentCompleteMessage(order.getOrderToken()));
     }
 }
