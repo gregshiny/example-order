@@ -5,6 +5,7 @@ import dev.practice.order.common.exception.IllegalStatusException;
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.common.util.TokenGenerator;
 import dev.practice.order.domain.AbstractEntity;
+import dev.practice.order.domain.order.fragment.DeliveryFragment;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -33,12 +34,8 @@ public class Order extends AbstractEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade = CascadeType.PERSIST)
     private List<OrderItem> orderItemList = Lists.newArrayList();
 
-    private String receiverName;
-    private String receiverPhone;
-    private String receiverZipcode;
-    private String receiverAddress1;
-    private String receiverAddress2;
-    private String etcMessage;
+    @Embedded
+    private DeliveryFragment deliveryFragment;
 
     private ZonedDateTime orderedAt;
 
@@ -61,31 +58,16 @@ public class Order extends AbstractEntity {
     public Order(
             Long userId,
             String payMethod,
-            String receiverName,
-            String receiverPhone,
-            String receiverZipcode,
-            String receiverAddress1,
-            String receiverAddress2,
-            String etcMessage
+            DeliveryFragment deliveryFragment
     ) {
         if (userId == null) throw new InvalidParamException("Order.userId");
         if (StringUtils.isEmpty(payMethod)) throw new InvalidParamException("Order.payMethod");
-        if (StringUtils.isEmpty(receiverName)) throw new InvalidParamException("Order.receiverName");
-        if (StringUtils.isEmpty(receiverPhone)) throw new InvalidParamException("Order.receiverPhone");
-        if (StringUtils.isEmpty(receiverZipcode)) throw new InvalidParamException("Order.receiverZipcode");
-        if (StringUtils.isEmpty(receiverAddress1)) throw new InvalidParamException("Order.receiverAddress1");
-        if (StringUtils.isEmpty(receiverAddress2)) throw new InvalidParamException("Order.receiverAddress2");
-        if (StringUtils.isEmpty(etcMessage)) throw new InvalidParamException("Order.etcMessage");
+        if (deliveryFragment == null) throw new InvalidParamException("Order.deliveryFragment");
 
         this.orderToken = TokenGenerator.randomCharacterWithPrefix(ORDER_PREFIX);
         this.userId = userId;
         this.payMethod = payMethod;
-        this.receiverName = receiverName;
-        this.receiverPhone = receiverPhone;
-        this.receiverZipcode = receiverZipcode;
-        this.receiverAddress1 = receiverAddress1;
-        this.receiverAddress2 = receiverAddress2;
-        this.etcMessage = etcMessage;
+        this.deliveryFragment = deliveryFragment;
         this.orderedAt = ZonedDateTime.now();
         this.status = Status.INIT;
     }
