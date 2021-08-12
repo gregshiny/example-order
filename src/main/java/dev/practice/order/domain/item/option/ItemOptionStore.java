@@ -1,4 +1,4 @@
-package dev.practice.order.domain.order.option;
+package dev.practice.order.domain.item.option;
 
 public interface ItemOptionStore {
     void store(ItemOption itemOption);
