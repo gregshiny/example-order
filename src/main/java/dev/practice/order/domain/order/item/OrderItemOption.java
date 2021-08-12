@@ -1,4 +1,4 @@
-package dev.practice.order.domain.order;
+package dev.practice.order.domain.order.item;
 
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;

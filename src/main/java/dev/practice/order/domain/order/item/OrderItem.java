@@ -1,8 +1,9 @@
-package dev.practice.order.domain.order;
+package dev.practice.order.domain.order.item;
 
 import com.google.common.collect.Lists;
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;
+import dev.practice.order.domain.order.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

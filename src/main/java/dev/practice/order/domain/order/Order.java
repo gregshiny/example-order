@@ -6,6 +6,7 @@ import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.common.util.TokenGenerator;
 import dev.practice.order.domain.AbstractEntity;
 import dev.practice.order.domain.order.fragment.DeliveryFragment;
+import dev.practice.order.domain.order.item.OrderItem;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
