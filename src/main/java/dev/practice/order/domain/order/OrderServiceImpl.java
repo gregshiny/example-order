@@ -28,7 +28,7 @@ public class OrderServiceImpl implements OrderService {
     public void paymentOrder(OrderCommand.PaymentRequest paymentRequest) {
         var orderToken = paymentRequest.getOrderToken();
         var order = orderReader.getOrder(orderToken);
-        paymentProcessor.pay(paymentRequest);
+        paymentProcessor.pay(order, paymentRequest);
         order.orderComplete();
     }
 }
