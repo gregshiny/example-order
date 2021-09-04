@@ -21,6 +21,7 @@ spring:
     schemas: order
     url: jdbc:mysql://localhost:3306/order?serverTimezone=UTC&characterEncoding=UTF-8
     enabled: true
+    baselineOnMigrate: true
 
 #  h2:
 #    console:
