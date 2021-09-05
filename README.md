@@ -1,5 +1,5 @@
-# 패스트캠퍼스 강의 - 주문 프로젝트
-해당 repo 는 [패스트캠퍼스 RED - 비즈니스 성공을 위한 Java/Spring 기반 서비스 개발과 MSA 구축](https://fastcampus.co.kr/dev_red_lhc) 에 대한 예제 프로젝트 입니다
+# 주문 프로젝트
+해당 repo 는 sample 프로젝트 입니다
 
 <br>
 
