@@ -28,5 +28,8 @@ spring:
 #      enabled: true
 #      path: /h2-console
 
+hymeleaf:
++    suffix: .html
+
 logging:
   config: classpath:logback-local.xml

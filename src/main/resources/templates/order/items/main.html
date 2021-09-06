@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=device-dpi, viewport-fit=cover">
+  <title>AWS TTT 3팀 쇼핑몰</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="AWS TTT 3팀 쇼핑몰">
+  <meta property="og:site_name" content="AWS TTT 3팀 쇼핑몰">
+  <meta property="og:title" content="AWS TTT 3팀 쇼핑몰">
+  <meta property="og:description" content="AWS TTT 3팀 쇼핑몰">
+  <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js">
+  <link rel="stylesheet" type="text/css" href="/order/items/main.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body onselectstart="return false" ondragstart="return false">
+    <div id="wrapper">
+      <div id="header" class="">
+        <div class="gnb">
+          <h1><a href="/">AWS TTT 3</a></h1>
+          <ul class="category">
+            <li>
+              <a href="#">소개</a>
+              <ul class="list">
+                <li><a href="#">농수산물</a></li>
+                <li><a href="#">축산물</a></li>
+                <li><a href="#">김치/반찬</a></li>
+                <li><a href="#">즉석/가공식품</a></li>
+                <li><a href="#">차/커피/음료</a></li>
+                <li><a href="#">기름/양념/가루</a></li>
+                <li><a href="#">건강식품</a></li>
+                <li><a href="#">선물세트</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">의료기기</a>
+              <ul class="list">
+                <li><a href="#">대형가전</a></li>
+                <li><a href="#">계절가전</a></li>
+                <li><a href="#">주방가전</a></li>
+                <li><a href="#">생활가전</a></li>
+                <li><a href="#">디지털</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">산소발생기</a>
+              <ul class="list">
+                <li><a href="#">기업용</a></li>
+                <li><a href="#">병원용</a></li>
+                <li><a href="#">도서관/학원</a></li>
+                <li><a href="#">개인용/차량용</a></li>
+                <li><a href="#">기타</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">건강식품</a>
+              <ul class="list">
+                <li><a href="#">아웃도어</a></li>
+                <li><a href="#">스포츠</a></li>
+                <li><a href="#">자동차</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">B2B문의</a>
+              <ul class="list">
+                <li><a href="#">주방</a></li>
+                <li><a href="#">잡화</a></li>
+                <li><a href="#">위생/욕실/세탁</a></li>
+                <li><a href="#">가구/인테리어</a></li>
+                <li><a href="#">생활건강</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">기타</a>
+              <ul class="list">
+                <li><a href="#">출산/육아</a></li>
+                <li><a href="#">반려동물</a></li>
+              </ul>
+            </li>
+            <li class="bar">
+              <a href="#">Community</a>
+              <ul class="list">
+                <li><a href="#">NOTICE</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Q&amp;A</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="menu">
+            <li class="my">
+              <a href="#">마이페이지</a>
+              <ul class="list">
+                <li>
+                  <a href="#">로그인</a>
+                </li>
+                <li>
+                  <a href="#">회원가입</a>
+                </li>
+                <li>
+                  <a href="#">마이페이지</a>
+                </li>
+              </ul>
+            </li>
+            <li class="cart">
+              <a href="  ">장바구니 <strong class="ea_cart front_cart_rows quick_cart_cnt">0</strong></a>
+            </li>
+            <li class="search">
+              <a onclick="toggle_view('box_search',this)">검색</a>
+            </li>
+          </ul>
+        </div>
+        <div id="box_search" class="box_search">
+          <div class="wrap_inner box">
+            <input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="검색어를 입력해주세요">
+            <input type="image" src="https://m.blindstore.kr/_skin/kemco/img/button/search2.png" alt="검색" class="btn">
+          </div>
+        </div>
+      </div>
+      <div id="cnt">
+        <div class="cntbody">
+          <style type="text/css" title="">
+          #cnt .cntbody {width:100%;}
+          </style>
+          <div id="main">
+            <div class="deal1">
+              <div class="wrap_inner">
+                <h2 class="subtitle">당신을 위한 <span>쇼핑몰</span></h2>
+                <ul class="prd_basic col3">
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/13/6bf7e284a0be76dbc57bdd43ebd83f22.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장  홍삼보가(紅蔘保佳) 50ml x 30포 + 쇼핑백</a>
+                        </p>
+                        <div class="summary">6년근 홍삼에 녹용추출액을 더해 맛과 향을 더하다</div>
+                        <div class="price">
+                          <span class="consumer">65,000원</span>
+                          <span class="sell">52,300원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/39fb2359e1b9c7bb70bd8b0a481f0389.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#" onclick="wishPartCartAjax(&quot;93C06A67AF6B87AA9F7A83DE8586C016&quot;, this); return false;"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">[정관장] 홍삼비력 50ml x 30포</a>
+                        </p>
+                        <div class="summary">일상의 화력을 UP하다</div>
+                        <div class="price">
+                          <span class="consumer">40,000원</span>
+                          <span class="sell">34,800원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/43cb593285a45d96fbfe28a1f4181a2f.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼진고 10ml x 20포</a>
+                        </p>
+                        <div class="summary">온가족이 즐기는 부드러운 맛</div>
+                        <div class="price">
+                          <span class="consumer">52,000원</span>
+                          <span class="sell">39,900원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/2fd8f616083631129ef8a23000c5f528.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼대정세트 250g x 2병 + 레네세 홍삼캔디 수 120g  + 쇼핑백</a>
+                        </p>
+                        <div class="summary">우리가족 건강지킴이</div>
+                        <div class="price">
+                          <span class="consumer">130,000원</span>
+                          <span class="sell">94,200원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/581231836af39b8b890fb4358ba316a3.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout" >Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼보감 50ml x 30포</a>
+                        </p>
+                        <div class="summary">늦게자도 다음날 상쾌하게 일어나고 싶다면?</div>
+                        <div class="price">
+                          <span class="consumer">69,000원</span>
+                          <span class="sell">45,100원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/3ea86d6a80bc99df66237953ba37dac8.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼보옥고 100g x 1병 + 쇼핑백</a>
+                        </p>
+                        <div class="summary">남녀 노소 부담없이 섭취할수있는 홍삼!</div>
+                        <div class="price">
+                          <span class="consumer">25,000원</span>
+                          <span class="sell">22,000원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/b970d137b827924e89e709c427d44b00.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish"><a href="#" onclick="wishPartCartAjax(&quot;F6BB36049C3B42A62DFA88C46E0F79D2&quot;, this); return false;"></a></span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼보활 40ml x 30포 + 쇼핑백</a>
+                        </p>
+                        <div class="summary">피로개선 도움</div>
+                        <div class="price">
+                          <span class="consumer">60,000원</span>
+                          <span class="sell">52,300원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/3ab8f3c26b75058a18306975a8cbc016.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼본력 40ml x 30포 + 쇼핑백</a>
+                        </p>
+                        <div class="summary">6년근 홍삼 추출액에 여러 좋은 성분을</div>
+                        <div class="price">
+                          <span class="consumer">65,000원</span>
+                          <span class="sell">50,000원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/1008279b288e406049e89315fcdf32d5.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">한국인삼공사 정관장 홍삼본정 250g x 1병</a>
+                        </p>
+                        <div class="summary">당신의 생활에 자연의 힘을 더 해드립니다</div>
+                        <div class="price">
+                          <span class="consumer">75,000원</span>
+                          <span class="sell">45,000원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="box ">
+                      <div class="img">
+                        <div class="prdimg">
+                          <a href="#">
+                            <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/50da5b5457e7f96f2e53386fc1efc9dc.png" width="260" height="260">
+                          </a>
+                        </div>
+                        <div class="soldout">Sold out</div>
+                        <span class="wish">
+                          <a href="#"></a>
+                        </span>
+                      </div>
+                      <div class="info">
+                        <p class="name">
+                          <a href="#">정관장 홍삼본정 250g x 2+레네세 홍삼캔디 수 120g</a>
+                        </p>
+                        <div class="summary">6년근 홍삼을 부드럽게 추출하여 홍삼의 맛과 향을 담았습니다</div>
+                        <div class="price">
+                          <span class="consumer">110,000원</span>
+                          <span class="sell">90,800원 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="crema-popup"></div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="shopinfo wrap_inner">
+          <ul class="menu">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">이용안내</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+          </ul>
+          <address class="info">
+            <span>상호. SK C&C</span>
+            <span>대표. 이민석</span>
+            <span>이메일. <a href="#">minseok.lee@sk.com</a></span>
+            <span class="last">전화. 010-2618-9758</span><br>
+            <span>주소. 경기도 성남시 분당구 판교로 255번길 46</span>
+            <span class="last">반품주소.  </span><br>
+            <span>사업자등록번호. 000-00-00000 <a href="#">(사업자정보확인)</a></span>
+            <span>통신판매업신고번호. 제 2020-성남중원-0000 호</span>
+            <span>개인정보보호책임자. 이민석</span>
+            <span class="last">호스팅 제공자 : AWS</span><br>
+            <span class="last">고객님은 안전거래를 위해 현금으로 결제 시 저희 쇼핑몰에 가입한 구매안전서비스를 이용하실 수 있습니다. <a href="http://admin.kcp.co.kr/Modules/escrow/kcp_pop.jsp?site_cd=WS06G">(서비스 가입사실확인)</a></span>
+          </address>
+          <p class="copyright">(c) <strong>SK C&C</strong> all rights reserved. <a href="#">designed &amp; managed by <strong>AWS.</strong></a></p>
+        </div>
+      </div>
+      <div id="quick">
+        <ul class="quick_menu">
+          <li class="wish"><a href="#">wish</a></li>
+          <li class="recent"><a onclick="toggle_view('recent_layer', this);">recent<span>0</span></a></li>
+          <li class="order"><a href="#">order</a></li>
+        </ul>
+        <ul class="btn_scroll">
+          <li class="top"><a onclick="scrollup();">top</a></li>
+          <li class="bottom"><a onclick="scrolldown();">bottom</a></li>
+        </ul>
+      </div>
+      <div id="recent_layer" class="recent_layer">
+        <div class="inner">
+          <span class="close" onclick="toggle_view('recent_layer', this);">close</span>
+          <p class="title">최근본상품 (0)</p>
+          <div class="list">
+            <div style="position:relative; width:300px; height:90px; overflow:hidden;">
+              <div id="wing_recent_view_box" style="position:absolute; top:0px; left:0px;"></div>
+            </div>
+          </div>
+          <div class="ctrl">
+            <a href="javascript:wingRecentVScroll(2);" class="prev">prev</a>
+            <a href="javascript:wingRecentVScroll(1);" class="next">next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=device-dpi, viewport-fit=cover">
+  <title>AWS TTT 3팀 쇼핑몰</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="AWS TTT 3팀 쇼핑몰">
+  <meta property="og:site_name" content="AWS TTT 3팀 쇼핑몰">
+  <meta property="og:title" content="AWS TTT 3팀 쇼핑몰">
+  <meta property="og:description" content="AWS TTT 3팀 쇼핑몰">
+  <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js">
+  <link rel="stylesheet" type="text/css" href="/order/item/main.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body onselectstart="return false" ondragstart="return false">
+    <div id="wrapper">
+      <div id="header" class="">
+        <div class="gnb">
+          <h1>
+            <a href="/">AWS TTT 3</a>
+          </h1>
+          <ul class="category">
+            <li>
+              <a href="#">AWS TTT 3 소개</a>
+              <ul class="list">
+                <li>
+                  <a href="#">농수산물</a>
+                </li>
+                <li>
+                  <a href="#">축산물</a>
+                </li>
+                <li>
+                  <a href="#">김치/반찬</a>
+                </li>
+                <li>
+                  <a href="#">즉석/가공식품</a>
+                </li>
+                <li>
+                  <a href="#">차/커피/음료</a>
+                </li>
+                <li>
+                  <a href="#">기름/양념/가루</a>
+                </li>
+                <li>
+                  <a href="#">건강식품</a>
+                </li>
+                <li>
+                  <a href="#">선물세트</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">의료기기</a>
+              <ul class="list">
+                <li>
+                  <a href="#">대형가전</a>
+                </li>
+                <li>
+                  <a href="#">계절가전</a>
+                </li>
+                <li>
+                  <a href="#">주방가전</a>
+                </li>
+                <li>
+                  <a href="@">생활가전</a>
+                </li>
+                <li>
+                  <a href="#">디지털</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">산소발생기</a>
+              <ul class="list">
+                <li>
+                  <a href="#">기업용</a>
+                </li>
+                <li>
+                  <a href="#">병원용</a>
+                </li>
+                <li>
+                  <a href="#">도서관/학원</a>
+                </li>
+                <li>
+                  <a href="#">개인용/차량용</a>
+                </li>
+                <li>
+                  <a href="#">기타</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">건강식품</a>
+              <ul class="list">
+                <li>
+                  <a href="#">아웃도어</a>
+                </li>
+                <li>
+                  <a href="#">스포츠</a>
+                </li>
+                <li>
+                  <a href="#">자동차</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">B2B문의</a>
+              <ul class="list">
+                <li>
+                  <a href="#">주방</a>
+                </li>
+                <li>
+                  <a href="#">잡화</a>
+                </li>
+                <li>
+                  <a href="#">위생/욕실/세탁</a>
+                </li>
+                <li>
+                  <a href="#">가구/인테리어</a>
+                </li>
+                <li>
+                  <a href="#">생활건강</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">기타</a>
+              <ul class="list">
+                <li>
+                  <a href="#">출산/육아</a>
+                </li>
+                <li>
+                  <a href="#">반려동물</a>
+                </li>
+              </ul>
+            </li>
+            <li class="bar">
+              <a href="#">Community</a>
+              <ul class="list">
+                <li>
+                  <a href="#">NOTICE</a>
+                </li>
+                <li>
+                  <a href="#">FAQ</a>
+                </li>
+                <li>
+                  <a href="#">Q&amp;A</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="menu">
+            <li class="my">
+              <a href="#">마이페이지</a>
+              <ul class="list">
+                <li>
+                  <a href="#">로그인</a>
+                </li> 
+                <li>
+                  <a href="#">회원가입</a>
+                </li>
+                <li>
+                  <a href="#">마이페이지</a>
+                </li>
+              </ul>
+            </li>
+            <li class="cart">
+              <a href="/shop/cart.php">장바구니 <strong class="ea_cart front_cart_rows quick_cart_cnt">0</strong></a>
+            </li>
+            <li class="search">
+              <a onclick="toggle_view('box_search',this)">검색</a>
+            </li>
+          </ul>
+        </div>
+        <div id="box_search" class="box_search">
+          <form method="get" action="#">
+            <div class="wrap_inner box">
+              <input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="검색어를 입력해주세요">
+              <input type="image" src="/img/button/search2.png" alt="검색" class="btn">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="cnt">
+        <div class="cntbody">
+          <div id="detail">
+            <form name="prdFrm" method="post" style="margin:0px" accept-charset="utf-8">
+              <input type="hidden" name="pno" value="93C06A67AF6B87AA9F7A83DE8586C016">
+              <input type="hidden" name="stat" value="2">
+              <input type="hidden" name="ea_type" value="2">
+              <input type="hidden" name="min_ord" value="1">
+              <input type="hidden" name="max_ord" value=""> 
+              <input type="hidden" name="ea" value="0">
+              <input type="hidden" name="next" value="">
+              <input type="hidden" name="exec" value="">
+              <input type="hidden" name="rURL" value="">
+              <input type="hidden" name="total_prc" value="34800">
+              <input type="hidden" name="pay_prc" value="34800">
+              <input type="hidden" name="new_total_prc" value="34800">
+              <input type="hidden" name="sell_prc_consultation" value="">
+              <input type="hidden" name="qd" value="">
+              <input type="hidden" name="prdcpn_no" value="">
+              <div class="wrap_prd">
+                <div class="prdimg">
+                  <div id="mimg_div" class="img">
+                    <a href="javascript:zoomView('93C06A67AF6B87AA9F7A83DE8586C016', '600', '800');">
+                      <div id="zoom_frame" style="position: relative;">
+                        <div id="zoom_frame" style="position: relative;">
+                          <div id="zoom_frame" style="position: relative;">
+                            <img id="mainImg" src="https://greatjlim.wisacdn.com/_data/product/202009/12/39fb2359e1b9c7bb70bd8b0a481f0389.png" width="100" height="100" jquery_pzoom="">
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="addimg">
+                    <div id="product_add_image_list">
+                      <div class="box_add_slide">
+                        <div class="add_slide slick-initialized slick-slider">
+                          <div aria-live="polite" class="slick-list draggable">
+                            <div class="slick-track" role="listbox" style="opacity: 1; width: 306px; transform: translate3d(0px, 0px, 0px);">
+                              <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 102px;">
+                                <img src="https://greatjlim.wisacdn.com/_data/product/202009/12/39fb2359e1b9c7bb70bd8b0a481f0389.png#addimg" alt="상품중이미지 썸네일" onmouseover="attatchAddImage(this, 500, 500)">
+                              </div>
+                              <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 102px;">
+                                <img src="https://greatjlim.wisacdn.com/_data/attach/202104/04/38c6f6e4d1d33e640af492a8ca2bb065.jpg#addimg" alt="부가이미지 썸네일" onmouseover="attatchAddImage(this, 500, 500)">
+                              </div>
+                              <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 102px;">
+                                <img src="https://greatjlim.wisacdn.com/_data/attach/202104/04/38c6f6e4d1d33e640af492a8ca2bb065.jpg#addimg" alt="부가이미지 썸네일" onmouseover="attatchAddImage(this, 500, 500)">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="name">[정관장] 홍삼비력 50ml x 30포 </h3>
+                  <div class="price">
+                    <del>40,000원</del>
+                    <span class="sell">
+                      <strong>34,800</strong>원
+                    </span>
+                  </div>
+                  <p class="summary">일상의 화력을 UP하다</p>
+                  <table class="list">
+                    <colgroup>
+                      <col style="width:30%;">
+                      <col>
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">배송비</th>
+                        <td>3,500원</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">수량</th>
+                        <td>
+                          <div class="box_qty">
+                            <input type="text" name="buy_ea" value="1" class="form_input" isplaceholderinited="true">
+                            <div class="btn_ea">
+                              <a href="javascript:eaChg(1);" class="ea_up"></a>
+                              <a href="javascript:eaChg(2);" class="ea_down"></a>
+                            </div>
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="multi_opt">
+                    <div class="opt_total">
+                      <span class="title">총금액</span>
+                      <strong>
+                        <span class="sell_prc_str_total">34,800</span>원
+                      </strong>
+                    </div>
+                  </div>
+                  <div class="btn">
+                    <span class="box_btn large cart">
+                      <a href="javascript:addCart(document.prdFrm,1);">장바구니</a>
+                    </span>
+                    <span class="box_btn large gray buy">
+                      <a href="javascript:addCart(document.prdFrm,2);">바로구매</a>
+                    </span>
+                    <span class="box_btn large white wish">
+                      <a href="javascript:addWish(document.prdFrm);"></a>
+                    </span>
+                    <div class="count_share">
+                      <p class="count">
+                        <a onclick="tabmove('1')" class="p_cursor">Review <span>0</span></a>|
+                        <a onclick="tabmove('2')" class="p_cursor">Q&amp;A <span>0</span></a>
+                      </p>
+                      <div class="sns">
+                        <a id="kakao-link-btn" href="javascript:;">
+                          <span class="kakao">kakao</span>
+                        </a>
+                        <a style="display:none;">
+                          <span class="kakaostory">kakaostory</span>
+                        </a>
+                        <a href="javascript:;" onclick="#" class="facebook">페이스북</a>
+                        <a href="javascript:;" onclick="#" class="twitter">트위터</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="opt_no" value="0">
+            </form> 
+            <div class="wrap_info">
+              <div class="tab_area">
+                <ul class="tab tab_detail">
+                  <li>
+                    <a onclick="tabmove('0')" class="">Details</a>
+                  </li>
+                    <li>
+                      <a onclick="tabmove('1')" class="">Review</a>
+                    </li>
+                    <li>
+                      <a onclick="tabmove('2')">Q&amp;A</a>
+                    </li>
+                    <li>
+                      <a onclick="tabmove('3')">Order info.</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tabcnt_detail tabcnt_detail0">
+                  <div class="detail_info">
+                    <div class="wing-detail-more-area" data-height="300px" data-state="closed">
+                      <div class="wing-detail-more-contents" style="height:300px;">
+                        <img title="Untitled-1.jpg" src="http://welfaremall.co.kr/file/image/2017/09/07/F_1504758233894.jpg">
+                        <br style="clear: both;">
+                        <br style="clear: both;">
+                      </div>
+                      <div class="wing-detail-more-cover">
+                      </div>
+                    </div>
+                  </div>
+                  <span class="box_btn block white large">
+                    <button type="button" class="wing-detail-more-view">상세정보 더보기</button>
+                    <button type="button" class="wing-detail-more-hide" style="display: none;">상세정보 숨기기</button>
+                  </span>
+                </div>
+                <div class="tabcnt_detail tabcnt_detail1">
+                  <div class="detail_qnarev crema-hide">
+                    <div class="title_qnarev">
+                      <h3>상품후기</h3>
+                      <div class="btn">
+                        <a onclick="writeReview(true, 32001);" class="write">글쓰기</a>
+                        <a href="/shop/product_review_list.php" class="list">전체보기</a>
+                      </div>
+                    </div>
+                    <div class="summary">
+                      <div class="count">
+                        <h4>전체 상품후기수</h4>
+                        <p><strong>0</strong>건</p>
+                      </div>
+                      <div class="grade">
+                        <h4>총 평점</h4>
+                        <span class="icon">
+                          <i style="width:0%"></i>
+                        </span>
+                        <p class="average"><strong>0</strong> / 5</p>
+                      </div>
+                      <div class="ratio">
+                        <h4>평점 비율</h4>
+                        <ul class="graph">
+                          <li>
+                            <span>1점</span>
+                            <span class="bar max min">
+                              <i style="width:0%;"></i>
+                            </span>
+                            <span class="count max">0</span>
+                          </li>
+                          <li>
+                            <span>2점</span>
+                            <span class="bar max min">
+                              <i style="width:0%;"></i>
+                            </span>
+                            <span class="count max">0</span>
+                          </li>
+                          <li>
+                            <span>3점</span>
+                            <span class="bar max min">
+                              <i style="width:0%;"></i>
+                            </span>
+                            <span class="count max">0</span>
+                          </li>
+                          <li>
+                            <span>4점</span>
+                            <span class="bar max min">
+                              <i style="width:0%;"></i>
+                            </span>
+                            <span class="count max">0</span>
+                          </li>
+                          <li>
+                            <span>5점</span>
+                            <span class="bar max min">
+                              <i style="width:0%;"></i>
+                            </span>
+                            <span class="count max">0</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="detail_review_ajax_list">
+                      <p class="empty">등록된 상품 후기가 없습니다.</p>
+                    </div>
+                  </div>
+                  <div id="crema-product-reviews" class="crema-product-reviews" data-product-code="32001"></div>
+                  <div class="crema-popup"></div>
+                </div>
+                <div class="tabcnt_detail tabcnt_detail2">
+                  <div class="detail_qnarev qnarev_list">
+                    <div class="title_qnarev">
+                      <h3>상품문의</h3>
+                      <div class="btn">
+                        <a href="javascript:writeQna();" class="write">글쓰기</a>
+                        <a href="#" class="list">전체보기</a>
+                      </div>
+                    </div>
+                    <div id="detail_qna_ajax_list">
+                      <div class="qnarev_write">
+                        <div id="qnaWriteDiv" style="display:none">
+                          <form name="qnaFrm" method="post" action="#" target="hidden1630933354" onsubmit="return checkQnaFrm(this)" style="margin:0px" enctype="multipart/form-data" data-bitwarden-watching="1">
+                            <input type="hidden" name="exec_file" value="shop/qna_reg.exe.php">
+                            <input type="hidden" name="pno" value="93C06A67AF6B87AA9F7A83DE8586C016">
+                            <input type="hidden" name="no" value="">
+                            <input type="hidden" name="exec" value="">
+                            <fieldset>
+                              <legend class="hidden">상품문의 작성</legend>
+                              <div class="name">
+                                <label for="qna_name">작성자</label>
+                                <input type="text" name="name" value="" id="qna_name" class="form_input" placeholder="작성자">
+                                <label for="qna_pwd">비밀번호</label>
+                                <input type="password" name="pwd" id="qna_pwd" class="form_input pw" placeholder="비밀번호">
+                                <span class="check">
+                                  <input type="checkbox" name="secret" value="Y">비밀글
+                                </span>
+                              </div>
+                              <div>
+                                <label>분류</label>
+                                <select name="cate" onchange="">
+                                  <option value="">:: 분류 선택 ::</option>
+                                  <option value="배송">배송</option>
+                                  <option value="입금">입금</option>
+                                  <option value="기타">기타</option>
+                                </select>
+                              </div>
+                              <div>
+                                <label for="b_category">제목</label>
+                                <input type="text" name="title" value="" id="qna_title" class="form_input block" placeholder="제목">
+                              </div>
+                              <div class="contents">
+                                <label for="qna_content">글내용</label>
+                                <textarea name="content" rows="20" id="qna_content" class="form_input block" isplaceholderinited="true"></textarea>
+                              </div>
+                              <div>
+                                <label for="qna_file1">첨부파일 1</label>
+                                <input type="file" name="upfile1" id="qna_file1" class="form_input block">
+                              </div>
+                              <div>
+                                <label for="qna_file2">첨부파일 2</label>
+                                <input type="file" name="upfile2" id="qna_file2" class="form_input block">
+                              </div>
+                            </fieldset>
+                            <div class="btn">
+                              <span class="box_btn w150 large">
+                                <input type="submit" value="확인">
+                              </span>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <p class="empty">등록된 상품 문의가 없습니다.</p>
+                    </div>
+                  </div>
+                </div>  		<!-- //상품문의 -->  		<!-- 추가정보(공통정보) -->  		
+                <div class="tabcnt_detail tabcnt_detail3">
+                  <div class="common_info">
+                    <strong>배송안내</strong><br>
+                    - 배송은 각 입점사에서 배송을 진행합니다. <br>
+                    - 배송비용은 입점사의 상품에 따라서 금액이 달라 질 수 있습니다.<br>
+                    - 배송준비 기간은 평균 1~4일 이내에 준비됩니다. (일,공휴일 제외) <br>
+                    <br>
+                    <strong>교환/반품</strong><br>
+                    - 단순 변심 및 주문착오에 의한 반품은 상품 수품수령 후 15일 이내여야 하며 교환/반품시 배송비는 고객부담 입니다. <br>
+                    - 상품 하자 및 오배송 등으로 인한 반품 비용은 입점사에서 부담 합니다. <br>
+                    - 본 쇼핑몰 상품들은 상품별 출고지/수거지가 상이하여 네이버페이 자동수거가 불가하므로 입점사에서 직접 수거를 진행합니다. <br>
+                    <br>
+                    <strong>교환/반품 불가능한 경우</strong><br>
+                    - 포장을 개봉하였거나 포장이 훼손되어 상품가치가 현저히 상실된 경우 <br>
+                    - 교환/반품 불가 상품 구매시 <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div id="footer">
+        <div class="shopinfo wrap_inner">
+          <ul class="menu">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">이용안내</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+          </ul>
+          <address class="info">
+            <span>상호. SK C&C</span>
+            <span>대표. 이민석</span>
+            <span>이메일. <a href="#">minseok.lee@sk.com</a></span>
+            <span class="last">전화. 010-2618-9758</span><br>
+            <span>주소. 경기도 성남시 분당구 판교로 255번길 46</span>
+            <span class="last">반품주소.  </span><br>
+            <span>사업자등록번호. 000-00-00000 <a href="#">(사업자정보확인)</a></span>
+            <span>통신판매업신고번호. 제 2020-성남중원-0000 호</span>
+            <span>개인정보보호책임자. 이민석</span>
+            <span class="last">호스팅 제공자 : AWS</span><br>
+            <span class="last">고객님은 안전거래를 위해 현금으로 결제 시 저희 쇼핑몰에 가입한 구매안전서비스를 이용하실 수 있습니다. <a href="http://admin.kcp.co.kr/Modules/escrow/kcp_pop.jsp?site_cd=WS06G">(서비스 가입사실확인)</a></span>
+          </address>
+          <p class="copyright">(c) <strong>SK C&C</strong> all rights reserved. <a href="#">designed &amp; managed by <strong>AWS.</strong></a></p>
+        </div>
+      </div>
+      <div id="quick">
+        <ul class="quick_menu">
+          <li class="wish"><a href="#">wish</a></li>
+          <li class="recent"><a onclick="toggle_view('recent_layer', this);">recent<span>0</span></a></li>
+          <li class="order"><a href="#">order</a></li>
+        </ul>
+        <ul class="btn_scroll">
+          <li class="top"><a onclick="scrollup();">top</a></li>
+          <li class="bottom"><a onclick="scrolldown();">bottom</a></li>
+        </ul>
+      </div>
+      <div id="recent_layer" class="recent_layer">
+        <div class="inner">
+          <span class="close" onclick="toggle_view('recent_layer', this);">close</span>
+          <p class="title">최근본상품 (0)</p>
+          <div class="list">
+            <div style="position:relative; width:300px; height:90px; overflow:hidden;">
+              <div id="wing_recent_view_box" style="position:absolute; top:0px; left:0px;"></div>
+            </div>
+          </div>
+          <div class="ctrl">
+            <a href="javascript:wingRecentVScroll(2);" class="prev">prev</a>
+            <a href="javascript:wingRecentVScroll(1);" class="next">next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
