@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-order
+  labels:
+    app: example-order
+  namespace: example-order-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: example-order
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: example-order
+    spec:
+      containers:
+      - image: 734268896595.dkr.ecr.ap-northeast-2.amazonaws.com/example-order:latest
+        imagePullPolicy: Always
+        name: example-order
+        command: 
+        - "java"
+        - "-jar"
+        - "/app.jar"
+        - "--spring.datasource.hikari.jdbc-url=jdbc:mysql://aws-ttt-3-db-instance-1.cgt4zl5rdd9h.ap-northeast-2.rds.amazonaws.com:3306/order?serverTimezone=UTC&characterEncoding=UTF-8"
+        - "--spring.datasource.hikari.username=order-svc"
+        - "--spring.datasource.hikari.password=order-pass"
+        - "--spring.flyway.url=jdbc:mysql://aws-ttt-3-db-instance-1.cgt4zl5rdd9h.ap-northeast-2.rds.amazonaws.com:3306/order?serverTimezone=UTC&characterEncoding=UTF-8"
+        - "--spring.flyway.username=order-svc"
+        - "--spring.flyway.password=order-pass"
+        ports:
+          - containerPort: 8080
+            protocol: TCP
