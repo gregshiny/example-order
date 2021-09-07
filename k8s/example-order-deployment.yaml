@@ -4,7 +4,7 @@ metadata:
   name: example-order
   labels:
     app: example-order
-  namespace: example-order-namespace
+  namespace: aws-ttt-3
 spec:
   replicas: 3
   selector:
@@ -27,7 +27,7 @@ spec:
         command: 
         - "java"
         - "-jar"
-        - "/app.jar"
+        - "/app.war"
         - "--spring.datasource.hikari.jdbc-url=jdbc:mysql://aws-ttt-3-db-instance-1.cgt4zl5rdd9h.ap-northeast-2.rds.amazonaws.com:3306/order?serverTimezone=UTC&characterEncoding=UTF-8"
         - "--spring.datasource.hikari.username=order-svc"
         - "--spring.datasource.hikari.password=order-pass"

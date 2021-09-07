@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: example-order
-  namespace: example-order-namespace
+  namespace: aws-ttt-3
 spec:
   selector:
     app: example-order
